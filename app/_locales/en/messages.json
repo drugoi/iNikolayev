@@ -1,0 +1,30 @@
+{
+   "appDesc": {
+      "description": "The description of the application, displayed in the web store.",
+      "message": "Replaces all images on all pages to Igor Nikolayev."
+   },
+   "appName": {
+      "description": "The title of the application, displayed in the web store.",
+      "message": "iNikolayev"
+   },
+   "contextMenuInactivate": {
+      "description": "The option in context menu to inactivate the extension",
+      "message": "Inactivate iNikolayev"
+   },
+   "optionsHeader": {
+      "description": "The options page title",
+      "message": "iNikolayev Options"
+   },
+   "optionsHeader": {
+      "description": "Title of Options page",
+      "message": "iNikolayev Options"
+   },
+   "optionsPageActivate": {
+      "description": "Text shown next to On/Off-button",
+      "message": "iNikolayev is"
+   },
+   "optionsPageContextLink": {
+      "description": "Text shown next to On/Off-button",
+      "message": "Show \"Inactivate iNikolayev\" on right-click"
+   }
+}

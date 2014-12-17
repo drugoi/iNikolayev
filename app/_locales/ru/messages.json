@@ -1,0 +1,26 @@
+{
+   "appDesc": {
+      "description": "The description of the application, displayed in the web store.",
+      "message": "Расширение заменяет все картинки на страницах на фотографии Игоря Николаева."
+   },
+   "appName": {
+      "description": "The title of the application, displayed in the web store.",
+      "message": "iNikolayev"
+   },
+   "contextMenuInactivate": {
+      "description": "The option in context menu to inactivate the extension",
+      "message": "Отключить iNikolayev"
+   },
+   "optionsHeader": {
+      "description": "The options page title",
+      "message": "Настройки iNikolayev"
+   },
+   "optionsPageActivate": {
+      "description": "Text shown next to On/Off-button",
+      "message": "iNikolayev"
+   },
+   "optionsPageContextLink": {
+      "description": "Text shown next to On/Off-button",
+      "message": "Показывать \"Отключить iNikolayev\" по правому клику мыши"
+   }
+}

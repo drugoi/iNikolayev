@@ -1,0 +1,152 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color:#ddd;
+	font-size:14px;
+}
+
+.options {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -200px;
+	margin-left: -200px;
+	width: 400px;
+	background-color: #FFF;
+	box-shadow: #555 0 0 10px;
+	font-size: 20px;
+}
+
+.options__image {
+	display: block;
+	width: 100%;
+}
+
+.options__props {
+	float: left;
+	width: 100%;
+}
+
+.options__row {
+	float: left;
+	padding: 10px 10px;
+	min-height: 35px;
+	max-height: 90px;
+	width: 100%;
+	line-height: 35px;
+}
+
+.options__row._context {
+	line-height: 20px;
+}
+
+.options__text {
+	float: left;
+	width: 70%;
+}
+
+/* Switch */
+.switch {
+	position:relative;
+	top: 5px;
+	float: right;
+	width: 75px;
+	-webkit-user-select: none;
+}
+
+.changer-checkbox {
+	display: none;
+}
+
+.changer-label {
+	display: block;
+	overflow: hidden;
+	border-radius: 15px;
+	cursor: pointer;
+}
+
+.changer-inner {
+	display: block;
+	margin-left: -100%;
+	width: 200%;
+	transition: margin .2s ease 0;
+}
+
+.changer-inner:before,
+.changer-inner:after {
+	display: block;
+	float: left;
+	box-sizing: border-box;
+	padding: 0;
+	width: 50%;
+	height: 24px;
+	color: #FFF;
+	line-height: 21px;
+}
+
+.changer-inner:before {
+	padding-left: 21px;
+	background-color: #2A9E1B;
+	color: #FFF;
+	content: "Вкл.";
+}
+
+.changer-inner:after {
+	padding-right: 21px;
+	background-color: #7D1010;
+	color: #FFF;
+	content: "Выкл.";
+	text-align: right;
+}
+
+.changer-switch {
+	position: absolute;
+	right: 53px;
+	bottom: 0.5px;
+	display: block;
+	margin: 3.5px;
+	width: 16px;
+	height: 16px;
+	border-radius:15px;
+	background: #FFF;
+	transition: all .2s ease 0;
+}
+
+.changer-checkbox:checked + .changer-label .changer-inner {
+	margin-left: 0;
+}
+
+.changer-checkbox:checked + .changer-label .changer-switch {
+	right: 0;
+}
+
+.switch {
+	width: 100px;
+}
+
+.changer-switch {
+	right: 78px;
+}
+
+@media screen and (max-width: 450px) {
+	body {
+		background-color: #fff;
+	}
+	
+	.options__image {
+		display: none;
+	}
+	
+	.options {
+		position: relative;
+		top: 0;
+		left: 0;
+		margin: 0;
+		width: 100%;
+		box-shadow: none;
+	}
+}
