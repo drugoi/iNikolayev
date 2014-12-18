@@ -95,6 +95,6 @@ module.exports = function(grunt) {
 			tasks: ['jshint']
 		}
 	});
-	grunt.registerTask('default', ['jshint']);
+	grunt.registerTask('default', ['jshint', 'watch']);
 	grunt.registerTask('build', ['clean', 'copy', 'uglify', 'csso', 'htmlmin', 'imagemin', 'compress']);
 };
