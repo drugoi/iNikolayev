@@ -1,5 +1,6 @@
 * {
 	box-sizing: border-box;
+	cursor: default;
 }
 
 body {
@@ -44,6 +45,11 @@ body {
 	line-height: 20px;
 }
 
+.options__row._photos {
+	margin-top: 0;
+}
+
+
 .options__text {
 	float: left;
 	width: 70%;
@@ -56,6 +62,7 @@ body {
 	float: right;
 	width: 75px;
 	-webkit-user-select: none;
+	cursor: pointer;
 }
 
 .changer-checkbox {
@@ -132,6 +139,7 @@ body {
 	right: 78px;
 }
 
+/*
 @media screen and (max-width: 450px) {
 	body {
 		background-color: #fff;
@@ -150,3 +158,4 @@ body {
 		box-shadow: none;
 	}
 }
+*/
