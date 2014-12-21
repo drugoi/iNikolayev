@@ -16,12 +16,8 @@
 	"manifest_version": 2,
 	"name": "__MSG_appName__",
 	"options_page": "inikolayev/options/options.html",
-	"options_ui": {
-		"chrome_style": false,
-		"page": "inikolayev/options/options.html"
-	},
 	"permissions": ["storage", "tabs", "contextMenus"],
 	"short_name": "__MSG_appName__",
 	"update_url": "https://clients2.google.com/service/update2/crx",
-	"version": "1.1.2"
+	"version": "1.1.3"
 }
