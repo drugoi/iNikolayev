@@ -82,11 +82,11 @@ module.exports = function(grunt) {
         src: 'app/manifest.json',
         dest: 'dist/manifest.json',
         options: {
-/*
-          process: function(content, srcpath) {
-            return content.replace('bg.js', 'bg.min.js').replace('inikolayev.js', 'inikolayev.min.js');
-          }
-*/
+          /*
+                    process: function(content, srcpath) {
+                      return content.replace('bg.js', 'bg.min.js').replace('inikolayev.js', 'inikolayev.min.js');
+                    }
+          */
         }
       }
     },
