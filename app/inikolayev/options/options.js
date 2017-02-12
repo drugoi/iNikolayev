@@ -1,69 +1,69 @@
-(function() {
+((() => {
   self = {
-    //Bind events
-    init: function() {
-      document.title = chrome.i18n.getMessage("optionsHeader");
-      var langs = ["optionsPageActivate", "optionsPageContextLink"];
-      for (var i = 0; i < langs.length; i++) {
-        var message = chrome.i18n.getMessage(langs[i]);
+    // Bind events
+    init() {
+      document.title = chrome.i18n.getMessage('optionsHeader');
+      const langs = ['optionsPageActivate', 'optionsPageContextLink'];
+      for (let i = 0; i < langs.length; i++) {
+        const message = chrome.i18n.getMessage(langs[i]);
         document.getElementById(langs[i]).textContent = message;
       }
       document.addEventListener('DOMContentLoaded', self.restoreOptions);
       document.getElementById('chkActivate').addEventListener('change', self.saveOptions);
       document.getElementById('chkUseContextMenu').addEventListener('change', self.saveOptions);
     },
-    //Save to storage
-    saveOptions: function() {
-      var activate = document.getElementById('chkActivate').checked;
-      var contextmenu = document.getElementById('chkUseContextMenu').checked;
-      var items = {
-        activate: activate,
-        contextmenu: contextmenu
+    // Save to storage
+    saveOptions() {
+      const activate = document.getElementById('chkActivate').checked;
+      const contextmenu = document.getElementById('chkUseContextMenu').checked;
+      const items = {
+        activate,
+        contextmenu,
       };
-      chrome.storage.sync.set(items, function() {
+      chrome.storage.sync.set(items, () => {
         self.setStatus(activate);
-        setTimeout(function() {}, 750);
+        setTimeout(() => {}, 750);
       });
-      //Notify bg.js
+      // Notify bg.js
       chrome.runtime.sendMessage({
-        type: "options",
-        items: items
-      }, function(response) {});
+        type: 'options',
+        items,
+      }, (response) => {});
     },
-    //Load from storage
-    restoreOptions: function() {
+    // Load from storage
+    restoreOptions() {
       chrome.storage.sync.get({
         activate: true,
-        contextmenu: true
-      }, function(items) {
+        contextmenu: true,
+      }, (items) => {
         document.getElementById('chkActivate').checked = items.activate;
         document.getElementById('chkUseContextMenu').checked = items.contextmenu;
         self.setStatus(items.activate);
       });
     },
-    //Update page with status
-    setStatus: function(active) {
-      var url;
+    // Update page with status
+    setStatus(active) {
+      let url;
       if (active) {
         url = chrome.extension.getURL('inikolayev/options/on.jpg');
       } else {
         url = chrome.extension.getURL('inikolayev/options/off.jpg');
       }
       document.querySelector('.options__image').src = url;
-    }
+    },
   };
   self.init();
-})();
+}))();
 
-var _gaq = _gaq || [];
+const _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-15665299-28']);
 _gaq.push(['_trackPageview']);
 
-(function() {
-  var ga = document.createElement('script');
+((() => {
+  const ga = document.createElement('script');
   ga.type = 'text/javascript';
   ga.async = true;
   ga.src = 'https://ssl.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0];
+  const s = document.getElementsByTagName('script')[0];
   s.parentNode.insertBefore(ga, s);
-})();
+}))();
