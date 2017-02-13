@@ -13,8 +13,7 @@ body {
   top: 50%;
   left: 50%;
   width: 400px;
-  margin-top: -200px;
-  margin-left: -200px;
+  transform: translate(-50%, -50%);
   font-size: 20px;
   background-color: #FFF;
   box-shadow: #555 0 0 10px;
