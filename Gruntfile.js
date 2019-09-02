@@ -1,7 +1,15 @@
 const appFolder = 'app/inikolayev/';
 const distFolder = 'dist/inikolayev/';
-const scripts = [`${appFolder}inikolayev.js`, `${appFolder}bg.js`, `${appFolder}options/options.js`];
-const scriptsTemp = ['temp/app/inikolayev/inikolayev.js', 'temp/app/inikolayev/bg.js', 'temp/app/inikolayev/options/options.js'];
+const scripts = [
+  `${appFolder}inikolayev.js`,
+  `${appFolder}bg.js`,
+  `${appFolder}options/options.js`,
+];
+const scriptsTemp = [
+  'temp/app/inikolayev/inikolayev.js',
+  'temp/app/inikolayev/bg.js',
+  'temp/app/inikolayev/options/options.js',
+];
 
 module.exports = (grunt) => {
   require('jit-grunt')(grunt);
@@ -14,22 +22,26 @@ module.exports = (grunt) => {
           removeComments: true,
           collapseWhitespace: true,
         },
-        files: [{
-          expand: true,
-          cwd: appFolder,
-          src: ['options/options.html'],
-          dest: distFolder,
-        }],
+        files: [
+          {
+            expand: true,
+            cwd: appFolder,
+            src: ['options/options.html'],
+            dest: distFolder,
+          },
+        ],
       },
     },
     imagemin: {
       dynamic: {
-        files: [{
-          expand: true,
-          cwd: appFolder,
-          src: ['**/*.{png,jpg,gif}'],
-          dest: distFolder,
-        }],
+        files: [
+          {
+            expand: true,
+            cwd: appFolder,
+            src: ['**/*.{png,jpg,gif}'],
+            dest: distFolder,
+          },
+        ],
       },
     },
     eslint: {
@@ -38,27 +50,33 @@ module.exports = (grunt) => {
     babel: {
       options: {
         sourceMap: false,
-        presets: ['es2015'],
+        presets: ['@babel/preset-env'],
       },
       dist: {
-        files: [{
-          expand: true,
-          src: scripts,
-          dest: 'temp/',
-        }],
+        files: [
+          {
+            expand: true,
+            src: scripts,
+            dest: 'temp/',
+          },
+        ],
       },
     },
     uglify: {
       options: {
         stripBanners: true,
-        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */',
+        banner:
+          '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+          '<%= grunt.template.today("yyyy-mm-dd") %> */',
       },
       dist: {
-        files: [{
-          'dist/inikolayev/inikolayev.js': scriptsTemp[0],
-          'dist/inikolayev/bg.js': scriptsTemp[1],
-          'dist/inikolayev/options/options.js': scriptsTemp[2],
-        }],
+        files: [
+          {
+            'dist/inikolayev/inikolayev.js': scriptsTemp[0],
+            'dist/inikolayev/bg.js': scriptsTemp[1],
+            'dist/inikolayev/options/options.js': scriptsTemp[2],
+          },
+        ],
       },
     },
     csso: {
@@ -67,7 +85,9 @@ module.exports = (grunt) => {
           report: 'gzip',
         },
         files: {
-          'dist/inikolayev/options/options.css': [`${appFolder}options/options.css`],
+          'dist/inikolayev/options/options.css': [
+            `${appFolder}options/options.css`,
+          ],
         },
       },
     },
@@ -77,22 +97,26 @@ module.exports = (grunt) => {
         options: {
           archive: 'inikolayev.zip',
         },
-        files: [{
-          expand: true,
-          cwd: 'dist/',
-          src: ['**/*', '_locales/**', 'manifest.json'],
-          dest: '',
-        }],
+        files: [
+          {
+            expand: true,
+            cwd: 'dist/',
+            src: ['**/*', '_locales/**', 'manifest.json'],
+            dest: '',
+          },
+        ],
       },
     },
     copy: {
       main: {
-        files: [{
-          expand: true,
-          cwd: 'app/',
-          src: ['_locales/**', 'inikolayev/options/options.css'],
-          dest: 'dist/',
-        }],
+        files: [
+          {
+            expand: true,
+            cwd: 'app/',
+            src: ['_locales/**', 'inikolayev/options/options.css'],
+            dest: 'dist/',
+          },
+        ],
       },
       manifest: {
         src: 'app/manifest.json',
@@ -112,5 +136,14 @@ module.exports = (grunt) => {
     },
   });
   grunt.registerTask('default', ['eslint', 'watch']);
-  grunt.registerTask('build', ['clean', 'copy', 'babel', 'uglify', 'csso', 'htmlmin', 'imagemin', 'compress']);
+  grunt.registerTask('build', [
+    'clean',
+    'copy',
+    'babel',
+    'uglify',
+    'csso',
+    'htmlmin',
+    'imagemin',
+    'compress',
+  ]);
 };
