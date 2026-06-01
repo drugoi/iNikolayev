@@ -1,0 +1,19 @@
+package.json
+  s_d88f862e4acbcd::t_59a0d596a8e322 33-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "5d166441ac1123051e4c6e631451fc1fb8ccd1be",
+  "prompts": {},
+  "sessions": {
+    "s_d88f862e4acbcd": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e81c4-b8f3-7bc2-8dfe-840bb0d6602f",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Nikita Bayev <nikita@bayev.kz>"
+    }
+  }
+}
